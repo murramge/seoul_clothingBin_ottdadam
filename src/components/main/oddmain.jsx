@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Oddguselect from "../select/oddguselect";
 import Odddoungselect from "../select/odddoungselect";
+import Oddaddress from "../list/oddaddress";
 
-function Oddmain({ handlecontent }) {
-  const [oddcity, setOddcity] = useState();
+function Oddmain() {
+  const [oddcity, setOddcity] = useState("구로구");
+  const [odddong, setOddDong] = useState("오류2동");
+  const [oddaddress, setOddAddress] = useState();
 
   return (
     <div>
@@ -13,10 +16,13 @@ function Oddmain({ handlecontent }) {
         <hr></hr>
       </div>
       <div>
-        <Oddguselect oddcity={setOddcity} handlecontent={handlecontent} />
+        <Oddguselect oddcity={setOddcity} />
       </div>
       <div>
-        <Odddoungselect oddcity={oddcity} />
+        <Odddoungselect oddcity={oddcity} odddong={setOddDong} />
+      </div>
+      <div>
+        <Oddaddress odddong={odddong} />
       </div>
     </div>
   );

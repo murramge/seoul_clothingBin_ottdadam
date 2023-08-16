@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import api from "../../API/api";
 
-function Oddguselect({ oddcity, handlecontent }) {
-  const selectList = ["구로구", "구로구", "구로구", "구로구"];
-  const [selected, setSelected] = useState("");
+function Oddguselect({ oddcity }) {
+  const selectList = ["구로구", "마포구", "광진구", "동작구"];
+  const [selected, setSelected] = useState("구로구");
 
   const handleGuChangeSelect = (e) => {
     setSelected(e.target.value);
     oddcity(e.target.value);
   };
+
   return (
     <div>
       <div>

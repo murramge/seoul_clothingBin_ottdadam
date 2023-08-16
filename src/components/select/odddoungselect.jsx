@@ -1,33 +1,38 @@
-import React from "react";
-import oddlocations from "./oddlocation.json";
+import React, { useEffect, useState } from "react";
+
 import api from "../../API/api";
-import axios from "axios";
 
-function Odddoungselect({ oddcity }) {
-  const dong = ["공덕동", "아현동", "도화동", "대흥동", "염리동"];
+function Odddoungselect({ oddcity, odddong }) {
+  const [dong, setDong] = useState([]);
+  const [clickdong, setClickdong] = useState("오류2동");
+  useEffect(() => {
+    console.log(oddcity);
+    async function dongresult() {
+      let data = await api.search(oddcity);
+      let dd = data.data.locList.filter(
+        (value, index, self) =>
+          index === self.findIndex((e) => value.ODD_DONG == e.ODD_DONG)
+      );
+      const dgd = dd.map((item, value) => item.ODD_DONG);
+      setDong(dgd);
+    }
+    dongresult();
+  }, [oddcity]);
 
-  let data = JSON.stringify({
-    district: oddcity,
-  });
-
-  let config = {
-    method: "post",
-    maxBodyLength: Infinity,
-    url: "http://192.168.0.179:8080/odds/search",
-    headers: {
-      "X-Api-Key": "<API Key>",
-      "Content-Type": "application/json",
-    },
-    data: data,
+  const handleaddress = (e) => {
+    setClickdong(e.target.innerText);
   };
-  axios.request(config).then((response) => {
-    console.log(JSON.stringify(response.data));
+  useEffect(() => {
+    odddong(clickdong);
   });
+
   return (
     <div>
       <div>
         {dong.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li key={index}>
+            <button onClick={handleaddress}>{item}</button>
+          </li>
         ))}
       </div>
       <hr></hr>
