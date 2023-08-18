@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Oddguselect from "../select/oddguselect";
 import Odddoungselect from "../select/odddoungselect";
 import Oddaddress from "../list/oddaddress";
+import KaKao from "../list/oddmap";
 
 function Oddmain() {
   const [oddcity, setOddcity] = useState("구로구");

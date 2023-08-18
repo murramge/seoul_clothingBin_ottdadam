@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "../../API/api";
+import KaKao from "./oddmap";
 
 function Oddaddress({ odddong }) {
   const [fullname, setFullname] = useState([]);
@@ -13,6 +14,10 @@ function Oddaddress({ odddong }) {
       let r = data.data.locList;
       const gd = r.map((item, value) => item.ODD_FULLNAME);
       setFullname(gd);
+      const dd = r.map((item, value) => item.ODD_X);
+      const df = r.map((item, value) => item.ODD_Y);
+
+      setarran({ x: dd, y: df });
     }
     addresult();
   }, [odddong]);
@@ -25,6 +30,9 @@ function Oddaddress({ odddong }) {
         ))}
       </div>
       <hr></hr>
+      <div>
+        <KaKao arran={arran} />
+      </div>
     </div>
   );
 }
