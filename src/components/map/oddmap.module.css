@@ -1,0 +1,13 @@
+.infobox {
+  width: 200px;
+  margin: 10px;
+  background-color: white;
+  border-style: none;
+  border-radius: 0;
+  color: red;
+  z-index: -1;
+}
+
+.layout {
+  display: flex;
+}

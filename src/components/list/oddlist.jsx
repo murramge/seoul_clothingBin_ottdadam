@@ -1,9 +1,14 @@
 import React from "react";
 
-function Oddlist({ oddaddress }) {
+function Oddlist({ oddaddress, setSelectAddress, setIsOpen }) {
+  const handleButton = (e) => {
+    setSelectAddress(e.target.innerText);
+    setIsOpen(true);
+  };
+
   return oddaddress.map((item, index) => (
     <ul key={index}>
-      <p>{item}</p>
+      <button onClick={handleButton}>{item}</button>
     </ul>
   ));
 }
