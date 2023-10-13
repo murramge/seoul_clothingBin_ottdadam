@@ -1,27 +1,23 @@
-import React, { useState } from "react";
-import api from "../../API/api";
+import React from "react";
+import styles from "./oddguselect.module.css";
 
-function Oddguselect({ oddcity }) {
-  const selectList = ["구로구", "마포구", "광진구", "동작구"];
-  const [selected, setSelected] = useState("구로구");
-
-  const handleGuChangeSelect = (e) => {
-    setSelected(e.target.value);
-    oddcity(e.target.value);
+function Oddguselect({ selectList, setGuSelected }) {
+  const handleGuSelect = (e) => {
+    setGuSelected(e.target.value);
   };
-
   return (
-    <div>
-      <div>
-        <select onChange={handleGuChangeSelect} value={selected}>
-          {selectList.map((item, index) => (
-            <option value={item} key={index}>
-              {item} 의류수거함 배치 현황
-            </option>
-          ))}
-        </select>
+    <div className={styles.box}>
+      <div className={styles.center}>
+        <div className={styles.wrap}>
+          <select className={styles.select} onChange={handleGuSelect}>
+            {selectList.map((item, index) => (
+              <option className={styles.text} value={item} key={index}>
+                {item} 의류수거함 배치 현황
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      <hr></hr>
     </div>
   );
 }

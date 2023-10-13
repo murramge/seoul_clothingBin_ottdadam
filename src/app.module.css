@@ -1,0 +1,8 @@
+.layout {
+  display: flex;
+}
+
+.textwrap {
+  text-align: center;
+  width: auto;
+}

@@ -9,6 +9,26 @@
     "DEL_YN": "N",
     "ODD_FULLNAME": "가마산로20다길 3"
   },
+  {
+    "ODD_SEQ": 1,
+    "ODD_CITY": "서울",
+    "ODD_DISTRICT": "구로구",
+    "ODD_DONG": "구로2동",
+    "ODD_X": "126.886315546458",
+    "ODD_Y": "37.4925401668134",
+    "DEL_YN": "N",
+    "ODD_FULLNAME": "가마산로20다길 5"
+  },
+  {
+    "ODD_SEQ": 1,
+    "ODD_CITY": "서울",
+    "ODD_DISTRICT": "구로구",
+    "ODD_DONG": "구로2동",
+    "ODD_X": "126.886315546458",
+    "ODD_Y": "37.4925401668134",
+    "DEL_YN": "N",
+    "ODD_FULLNAME": "가마산로20다길 10"
+  },
 
   {
     "ODD_SEQ": 77,

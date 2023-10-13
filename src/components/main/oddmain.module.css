@@ -1,0 +1,9 @@
+.layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.textwrap {
+  text-align: center;
+  width: auto;
+}

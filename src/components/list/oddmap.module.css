@@ -1,0 +1,14 @@
+.list {
+  list-style: none;
+  width: auto;
+}
+
+.map {
+  margin-top: 50px;
+  width: auto;
+  height: auto;
+}
+
+.lists {
+  background: white;
+}

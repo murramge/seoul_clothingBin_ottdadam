@@ -1,0 +1,28 @@
+.box {
+  background-color: #f2f2f2;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.select {
+  width: 600px;
+  height: 40px;
+  border-color: rgb(191, 191, 191);
+  -o-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px;
+  background: url("/public/drop-down-arrow.png") no-repeat 97% 50%/15px auto;
+}
+
+.wrap {
+  width: 600px;
+  height: 40px;
+  background-color: #fff;
+}
