@@ -3,7 +3,7 @@ import styles from "./app.module.css";
 import Oddguselect from "./components/select/oddguselect";
 import json2 from "./oddlocation.json";
 import Odddoungselect from "./components/select/odddoungselect";
-
+import apis from "./API/api.js";
 import Oddmap from "./components/map/oddmap";
 
 function App({}) {
@@ -21,6 +21,10 @@ function App({}) {
   const GuInfo = json.filter((item) => {
     return item.ODD_DISTRICT == GuSelected;
   });
+
+  // (async function () {
+  //   const result = await apis.search(GuSelected);
+  // })();
 
   useEffect(() => {
     setDongSelected(unique_dong[0]);
@@ -45,7 +49,7 @@ function App({}) {
       <div>
         <div className={styles.textwrap}>
           <p>서울특별시 의류수거함 위치정보</p>
-          <p>OTTDADAM</p>
+          <p className={styles.oddTitle}>OTTDADAM</p>
         </div>
         <Oddguselect
           selectList={unique_district}

@@ -1,4 +1,17 @@
 .textwrap {
   text-align: center;
   width: auto;
+  height: 130px;
+  padding-top: 20px;
+  justify-content: center;
+}
+
+.oddTitle {
+  width: max-content;
+  padding: 13px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: green;
+  color: white;
+  font-size: larger;
 }
