@@ -1,0 +1,59 @@
+.listbox {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.box {
+  width: 500px;
+  margin-right: 3px;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.09), 0 4px 2px rgba(0, 0, 0, 0.09),
+    0 8px 4px rgba(0, 0, 0, 0.09), 0 16px 8px rgba(0, 0, 0, 0.09),
+    0 32px 16px rgba(0, 0, 0, 0.09);
+}
+
+.list {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.textbox {
+  width: 100%;
+  height: auto;
+
+  background-color: #287f62;
+}
+
+.text {
+  margin: 0;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 1px;
+}
+.button {
+  width: 100%;
+  height: 70px;
+  text-align: center;
+  border-width: 0.1px;
+  border-color: rgb(207, 206, 206);
+  background-color: white;
+  outline: none;
+  border-image: none;
+  border-style: ridge;
+}
+.active {
+  border-width: 0.3px;
+  border-color: rgb(89, 200, 159);
+  background-color: rgba(109, 248, 167, 0.206);
+  width: 100%;
+  height: 70px;
+  text-align: center;
+
+  outline: none;
+  border-image: none;
+  border-style: ridge;
+}

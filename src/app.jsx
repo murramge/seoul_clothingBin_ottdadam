@@ -45,7 +45,6 @@ function App({}) {
 
   return (
     <>
-      {/* <Oddmain /> */}
       <div>
         <div className={styles.textwrap}>
           <p>서울특별시 의류수거함 위치정보</p>
@@ -62,7 +61,8 @@ function App({}) {
             addressInfo={DongInfo}
             setSelectAddress={setSelectAddress}
             AddressInfo={AddressInfo}
-            odd_address={odd_address}></Oddmap>
+            odd_address={odd_address}
+            DongInfo={DongInfo}></Oddmap>
         </div>
       </div>
     </>
