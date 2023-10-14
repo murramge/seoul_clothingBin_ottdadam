@@ -21,6 +21,7 @@
   appearance: none;
   padding: 10px;
   background: url("/public/drop-down-arrow.png") no-repeat 97% 50%/15px auto;
+  cursor: pointer;
 }
 
 *:focus {

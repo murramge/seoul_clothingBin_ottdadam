@@ -12,8 +12,9 @@ function App({}) {
   const set = new Set(odd_district);
   const unique_district = [...set];
   const [GuSelected, setGuSelected] = useState(unique_district[0]);
-  const [selectAddress, setSelectAddress] = useState("");
+  const [selectAddress, setSelectAddress] = useState();
 
+  console.log(selectAddress);
   const AddressInfo = json.filter((item) => {
     return item.ODD_FULLNAME == selectAddress;
   });

@@ -13,7 +13,10 @@ function Oddmap({
   DongInfo,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [lngs, setlng] = useState(addressInfo[0].ODD_X);
+  const [lats, setlat] = useState(addressInfo[0].ODD_Y);
+  const [select, setSelect] = useState();
+  const [markerselect, setMarkerSelect] = useState();
   let maplist = [];
 
   addressInfo.map((item) => {
@@ -25,6 +28,12 @@ function Oddmap({
   });
 
   const handleMarkerBtn = (e) => {
+    setMarkerSelect((prev) => {
+      return e.Gb;
+    });
+    setSelect((prev) => {
+      return e.Gb;
+    });
     setSelectAddress(e.Gb);
     setIsOpen(true);
   };
@@ -36,28 +45,31 @@ function Oddmap({
           oddaddress={odd_address}
           setSelectAddress={setSelectAddress}
           setIsOpen={setIsOpen}
-          DongInfo={DongInfo}></Oddlist>
+          DongInfo={DongInfo}
+          setSelect={setSelect}
+          select={select}></Oddlist>
         <div className={styles.box}>
           <Map // 지도를 표시할 Container
             center={{
               // 지도의 중심좌표
-              lat: addressInfo[0].ODD_Y,
-              lng: addressInfo[0].ODD_X,
+              lat: AddressInfo.length == 0 ? lats : AddressInfo[0].ODD_Y,
+              lng: AddressInfo.length == 0 ? lngs : AddressInfo[0].ODD_X,
             }}
             style={{
               // 지도의 크기
               width: "auto",
               height: "100%",
             }}
-            level={3} // 지도의 확대 레벨
+            level={2} // 지도의 확대 레벨
           >
             {maplist.map((maplist, index) => (
               <MapMarker
                 key={index}
                 position={maplist.latlng} // 마커를 표시할 위치
                 onClick={handleMarkerBtn}
+                value={index}
                 image={{
-                  src: "clothafter.png", // 마커이미지의 주소입니다
+                  src: "clothafter.png",
                   size: {
                     width: 24,
                     height: 35,

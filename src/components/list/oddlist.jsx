@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styles from "../list/oddlist.module.css";
 
-function Oddlist({ oddaddress, setSelectAddress, setIsOpen, DongInfo }) {
-  const [select, setSelect] = useState();
+function Oddlist({
+  oddaddress,
+  setSelectAddress,
+  setIsOpen,
+  DongInfo,
+  setSelect,
+  select,
+}) {
   const handleButton = (e) => {
     setSelect((prev) => {
       return e.target.value;
@@ -11,7 +17,8 @@ function Oddlist({ oddaddress, setSelectAddress, setIsOpen, DongInfo }) {
     setIsOpen(true);
   };
 
-  console.log(DongInfo);
+  console.log(select);
+
   return (
     <>
       <div className={styles.box}>
@@ -20,14 +27,16 @@ function Oddlist({ oddaddress, setSelectAddress, setIsOpen, DongInfo }) {
         </div>
         <div className={styles.listbox}>
           {oddaddress.map((item, index) => (
-            <ul className={styles.list} key={index}>
-              <button
-                value={index}
-                className={index == select ? styles.active : styles.button}
-                onClick={handleButton}>
-                {item}
-              </button>
-            </ul>
+            <div className={styles.listbox2}>
+              <ul className={styles.list} key={index}>
+                <button
+                  value={index}
+                  className={index == select ? styles.active : styles.button}
+                  onClick={handleButton}>
+                  {item}
+                </button>
+              </ul>
+            </div>
           ))}
         </div>
       </div>

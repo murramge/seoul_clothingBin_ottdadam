@@ -4,6 +4,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 47vh;
+  overflow-y: scroll;
+}
+.listbox2 {
 }
 
 .box {
@@ -44,6 +48,7 @@
   outline: none;
   border-image: none;
   border-style: ridge;
+  cursor: pointer;
 }
 .active {
   border-width: 0.3px;

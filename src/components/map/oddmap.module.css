@@ -26,6 +26,7 @@
   padding: 5px;
   background-color: #ccded8ae;
   font-size: large;
+  cursor: pointer;
 }
 
 .textbox {
@@ -71,4 +72,5 @@
   outline: none;
   border-image: none;
   border-style: none;
+  cursor: pointer;
 }

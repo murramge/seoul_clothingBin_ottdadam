@@ -28,6 +28,7 @@
   outline: none;
   border-image: none;
   border-style: ridge;
+  cursor: pointer;
 }
 .button:focus {
   outline: none;
