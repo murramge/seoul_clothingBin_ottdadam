@@ -13,8 +13,6 @@ function Oddmap({
   DongInfo,
 }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [lngs, setlng] = useState(addressInfo[0].ODD_X);
-  const [lats, setlat] = useState(addressInfo[0].ODD_Y);
   const [select, setSelect] = useState();
   const [markerselect, setMarkerSelect] = useState();
   let maplist = [];
@@ -28,8 +26,9 @@ function Oddmap({
   });
 
   const handleMarkerBtn = (e) => {
+    console.log(e);
     setMarkerSelect((prev) => {
-      return e.Gb;
+      return e;
     });
     setSelect((prev) => {
       return e.Gb;
@@ -37,6 +36,8 @@ function Oddmap({
     setSelectAddress(e.Gb);
     setIsOpen(true);
   };
+
+  console.log(markerselect);
 
   return (
     <>
@@ -52,8 +53,14 @@ function Oddmap({
           <Map // 지도를 표시할 Container
             center={{
               // 지도의 중심좌표
-              lat: AddressInfo.length == 0 ? lats : AddressInfo[0].ODD_Y,
-              lng: AddressInfo.length == 0 ? lngs : AddressInfo[0].ODD_X,
+              lat:
+                AddressInfo.length == 0
+                  ? addressInfo[0].ODD_Y
+                  : AddressInfo[0].ODD_Y,
+              lng:
+                AddressInfo.length == 0
+                  ? addressInfo[0].ODD_X
+                  : AddressInfo[0].ODD_X,
             }}
             style={{
               // 지도의 크기
