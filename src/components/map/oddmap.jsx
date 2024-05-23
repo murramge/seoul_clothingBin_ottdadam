@@ -37,8 +37,6 @@ function Oddmap({
     setIsOpen(true);
   };
 
-  console.log(markerselect);
-
   return (
     <>
       <div className={styles.layout}>
