@@ -17,8 +17,6 @@ function Oddlist({
     setIsOpen(true);
   };
 
-  console.log(select);
-
   return (
     <>
       <div className={styles.box}>

@@ -1,10 +1,14 @@
 import React from "react";
 import styles from "./oddguselect.module.css";
+import { useStateContext } from "../../context/StateContext";
 
-function Oddguselect({ selectList, setGuSelected }) {
+function Oddguselect({ selectList }) {
+  const { dispatch } = useStateContext();
+
   const handleGuSelect = (e) => {
-    setGuSelected(e.target.value);
+    dispatch({ type: "SET_GU_SELECTED", payload: e.target.value });
   };
+
   return (
     <div className={styles.box}>
       <div className={styles.center}>

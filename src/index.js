@@ -1,11 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
+import ReactDOM from "react-dom";
 import App from "./app";
+import { StateProvider } from "./context/StateContext";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <StateProvider>
+      <App />
+    </StateProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
