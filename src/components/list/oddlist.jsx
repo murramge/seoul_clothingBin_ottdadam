@@ -25,7 +25,7 @@ function Oddlist({
         </div>
         <div className={styles.listbox}>
           {oddaddress.map((item, index) => (
-            <div className={styles.listbox2}>
+            <div key={index} className={styles.listbox2}>
               <ul className={styles.list} key={index}>
                 <button
                   value={index}

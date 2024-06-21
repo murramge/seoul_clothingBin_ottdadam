@@ -28,7 +28,6 @@ function Oddmap({ addressInfo, setSelectAddress, odd_address, DongInfo }) {
   });
 
   const handleMarkerBtn = (e) => {
-    console.log(e);
     setMarkerSelect((prev) => {
       return e;
     });
