@@ -26,10 +26,8 @@
 ## About Project 
 
 #### 실행방법
-1. 현재 github를 git clone 후 코드 열기
-2. vscode같은 IDE에서 터미널에 npm install 하기
-3. 터미널에 npm install react-scripts
-4. localhost:3000 환경에서 npm run start
+
+  [옷다담 사이트✨](http://158.179.194.191:3000/)
 
 ## Preview
 
