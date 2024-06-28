@@ -3,6 +3,7 @@ import React, { createContext, useReducer, useContext } from "react";
 const StateContext = createContext();
 
 const initialState = {
+  location: "",
   GuSelected: "",
   DongSelected: "",
   selectAddress: "",
@@ -10,6 +11,8 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "LOCATION":
+      return { ...state, location: action.payload };
     case "SET_GU_SELECTED":
       return { ...state, GuSelected: action.payload };
     case "SET_DONG_SELECTED":

@@ -1,5 +1,10 @@
 import { API_AXIOS } from "./axios";
 
-export default {
-  search: (district) => API_AXIOS.post(`/search`, { district: "구로구" }),
+export const Search = async (searchValue) => {
+  try {
+    const data = await API_AXIOS.post(`/search`, { fullName: searchValue });
+    return data.data;
+  } catch (error) {
+    console.error(error);
+  }
 };
