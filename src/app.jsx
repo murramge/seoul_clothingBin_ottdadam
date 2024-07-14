@@ -5,6 +5,7 @@ import Odddoungselect from "./components/select/odddoungselect";
 import Oddmap from "./components/map/oddmap";
 import { useStateContext } from "./context/StateContext";
 import { Search } from "./API/api.js";
+import { useQuery } from "react-query";
 
 function App() {
   const [district, setDistrict] = useState([]);
@@ -16,18 +17,19 @@ function App() {
   const { state, dispatch } = useStateContext();
   const { location, GuSelected, DongSelected, selectAddress } = state;
 
+  const { data, isLoading, error } = useQuery(
+    "locationData",
+    () => Search("서울"),
+    {
+      refetchOnWindowFocus: false, // 윈도우 포커스 시 데이터를 다시 불러오지 않음
+    }
+  );
+  console.log(data, error, isLoading);
   useEffect(() => {
-    const fetchLocationData = async () => {
-      try {
-        const data = await Search("서울");
-        dispatch({ type: "LOCATION", payload: data.locList });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchLocationData();
-  }, [dispatch]);
+    if (data) {
+      dispatch({ type: "LOCATION", payload: data.locList });
+    }
+  }, [data, dispatch]);
 
   useEffect(() => {
     if (location.length > 0) {
