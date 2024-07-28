@@ -3,6 +3,7 @@ import styles from "./odddoungselect.module.css";
 import { useStateContext } from "../../context/StateContext";
 
 function Odddoungselect({ donglist }) {
+  const dongList = donglist.filter((item) => item.trim() !== "");
   const { dispatch } = useStateContext();
   const [select, setSelect] = useState();
 
@@ -15,7 +16,7 @@ function Odddoungselect({ donglist }) {
   return (
     <div className={styles.bg}>
       <div className={styles.btnlist}>
-        {donglist.map((item, index) => (
+        {dongList.map((item, index) => (
           <li className={styles.list} key={index}>
             <button
               className={index === select ? styles.active : styles.button}

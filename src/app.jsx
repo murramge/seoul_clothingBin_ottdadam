@@ -24,7 +24,7 @@ function App() {
       refetchOnWindowFocus: false, // 윈도우 포커스 시 데이터를 다시 불러오지 않음
     }
   );
-  console.log(data, error, isLoading);
+
   useEffect(() => {
     if (data) {
       dispatch({ type: "LOCATION", payload: data.locList });
@@ -33,9 +33,10 @@ function App() {
 
   useEffect(() => {
     if (location.length > 0) {
-      const oddDistricts = Array.from(
+      let oddDistricts = Array.from(
         new Set(location.map((item) => item.ODD_DISTRICT))
       );
+      oddDistricts = oddDistricts.filter((item) => item.trim() !== "");
       setDistrict(oddDistricts);
 
       if (oddDistricts.length > 0) {
@@ -49,7 +50,9 @@ function App() {
       const guInfo = location.filter(
         (item) => item.ODD_DISTRICT === GuSelected
       );
-      const oddDongs = Array.from(new Set(guInfo.map((item) => item.ODD_DONG)));
+      let oddDongs = Array.from(
+        new Set(guInfo.map((item) => item.ODD_DONG))
+      ).filter((item) => item.trim() !== "");
       setUniqueDong(oddDongs);
 
       if (oddDongs.length > 0) {
@@ -78,6 +81,7 @@ function App() {
       const dongInfo = location.filter(
         (item) => item.ODD_DONG === DongSelected
       );
+
       setDongInfo(dongInfo);
       const oddAddress = dongInfo.map((item) => item.ODD_FULLNAME);
       setOddAddress(oddAddress);

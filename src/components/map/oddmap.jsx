@@ -100,11 +100,13 @@ function Oddmap({ addressInfo, setSelectAddress, odd_address, DongInfo }) {
                     <p className={styles.oddTitle}>의류수거함</p>
                   </div>
                   <div className={styles.textbox}>
-                    <p>
+                    <p className={styles.address}>
                       {AddressInfo[0].ODD_CITY}시 {AddressInfo[0].ODD_DISTRICT}{" "}
                       {AddressInfo[0].ODD_DONG}
                     </p>
-                    <p>{AddressInfo[0].ODD_FULLNAME}</p>
+                    <p className={styles.address}>
+                      {AddressInfo[0].ODD_FULLNAME}
+                    </p>
                   </div>
                 </div>
                 <div className={styles.buttonbox}>

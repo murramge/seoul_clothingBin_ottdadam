@@ -10,8 +10,12 @@
   justify-content: center;
 }
 
+.center {
+  width: 70%;
+}
+
 .select {
-  width: 400px;
+  width: 100%;
   height: 40px;
   border-color: green;
   border-width: 3px;
@@ -29,7 +33,7 @@
 }
 
 .wrap {
-  width: auto;
+  width: 100%;
   height: 40px;
   background-color: #fff;
 }

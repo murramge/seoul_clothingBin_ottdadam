@@ -51,3 +51,37 @@
   border-image: none;
   border-style: ridge;
 }
+
+@media (max-width: 500px) {
+  .btnlist {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    height: 200px;
+    margin-top: 10px;
+    gap: 2px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button {
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    margin-top: -5px;
+    border-radius: 0.7rem;
+    border-width: 0.3px;
+    border-color: rgb(207, 206, 206);
+    background-color: white;
+
+    outline: none;
+    border-image: none;
+    border-style: ridge;
+    cursor: pointer;
+  }
+}
