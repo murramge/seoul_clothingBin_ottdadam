@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import App from "./app";
 import { StateProvider } from "./context/StateContext";
 import "./index.css";
@@ -7,13 +7,14 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <StateProvider>
         <App />
       </StateProvider>
     </QueryClientProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
